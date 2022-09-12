@@ -15,8 +15,6 @@ const github = require('@actions/github');
           });
 
 
-          core.notice(data);
-
         //core.notice(`My Action is called by ${githubUser} for ${githubOrg} `);
         octokit.rest.orgs.createInvitation({
             org: githubOrg,

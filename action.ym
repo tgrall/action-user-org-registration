@@ -1,0 +1,5 @@
+name: 'Add User to Org Action'
+description: 'This action add the user that generated the event as member of the current organization'
+runs:
+  using: 'node16'
+  main: 'index.js'

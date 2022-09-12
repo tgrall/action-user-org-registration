@@ -9,7 +9,7 @@ const github = require('@actions/github');
         const githubOrg = core.getInput('github_organization'); 
         const octokit = new github.getOctokit(githubToken);
 
-        const x = ${{ JSON.stringify(githubOrg) }};
+        const x =  JSON.stringify(githubOrg);
 
         core.notice(`My Action is called by ${githubUser} for ${{x}} `);
 

@@ -3,7 +3,15 @@ const github = require('@actions/github');
 
 (async () => {
     try {
-        core.notice('My Action is called!!!');
+
+        const githubUser = getRequiredInputValue('github_user');
+        const githubToken = getRequiredInputValue('github_token');
+
+
+        core.notice(`My Action is called by ${githubUser}  `);
+
+
+
     } catch (error) {
         core.setFailed(error.message);
     }

@@ -3,3 +3,12 @@ description: 'This action add the user that generated the event as member of the
 runs:
   using: 'node16'
   main: 'index.js'
+inputs:
+  github_token:
+    description: The GitHub token that can be used to obtain the Issue via API lookup
+    default: ${{ github.token }}
+    required: true
+  github_user:
+    description: The user that will be added to the organization
+    default: ${{ github.actor }}
+    required: true

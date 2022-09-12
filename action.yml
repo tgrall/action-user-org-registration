@@ -7,8 +7,9 @@ inputs:
   github_token:
     description: The GitHub token that can be used to obtain the Issue via API lookup
     default: ${{ github.token }}
-    required: true
   github_user:
     description: The user that will be added to the organization
     default: ${{ github.actor }}
-    required: true
+  github_organization:
+    description: The organization where the user will be added as member
+    default: ${{ github.repository_owner }}

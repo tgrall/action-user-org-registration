@@ -4,8 +4,8 @@ const github = require('@actions/github');
 (async () => {
     try {
 
-        const githubUser = getRequiredInputValue('github_user');
-        const githubToken = getRequiredInputValue('github_token');
+        const githubUser = core.getInput('github_user');
+        const githubToken = core.getInput('github_token');
 
 
         core.notice(`My Action is called by ${githubUser}  `);

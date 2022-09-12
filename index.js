@@ -10,7 +10,7 @@ const github = require('@actions/github');
         const octokit = new github.getOctokit(githubToken);
 
 
-        const const { status, headers, user }  = await octokit.request('GET /users/{username}', {
+        const { status, headers, user }  = await octokit.request('GET /users/{username}', {
             username: githubUser
           });
 

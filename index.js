@@ -9,8 +9,14 @@ const github = require('@actions/github');
         const githubOrg = core.getInput('github_organization'); 
         const octokit = new github.getOctokit(githubToken);
 
+        let user = octokit.rest.users.getByUsername({
+            githubUser,
+          });
 
-        core.notice(`My Action is called by ${githubUser} for ${githubOrg} `);
+
+          core.notice(user);
+
+        //core.notice(`My Action is called by ${githubUser} for ${githubOrg} `);
         octokit.rest.orgs.createInvitation({
             org: githubOrg,
             invitee_id : githubUser,

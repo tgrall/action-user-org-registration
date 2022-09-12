@@ -10,7 +10,7 @@ const github = require('@actions/github');
         const octokit = new github.getOctokit(githubToken);
 
 
-        const user = await octokit.request('GET /users/{username}', {
+        const const { status, headers, user }  = await octokit.request('GET /users/{username}', {
             username: githubUser
           });
 
@@ -20,7 +20,7 @@ const github = require('@actions/github');
         //core.notice(`My Action is called by ${githubUser} for ${githubOrg} `);
         octokit.rest.orgs.createInvitation({
             org: githubOrg,
-            invitee_id : githubUser,
+            invitee_id : user.id,
             role: 'direct_member'
           });
 

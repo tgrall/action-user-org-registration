@@ -16,7 +16,7 @@ const github = require('@actions/github');
 
 
         //core.notice(`My Action is called by ${githubUser} for ${githubOrg} `);
-        octokit.rest.orgs.createInvitation({
+        await octokit.rest.orgs.createInvitation({
             org: githubOrg,
             invitee_id : data.id,
             role: 'direct_member'

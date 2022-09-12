@@ -9,8 +9,9 @@ const github = require('@actions/github');
         const githubOrg = core.getInput('github_organization'); 
         const octokit = new github.getOctokit(githubToken);
 
-        let user = octokit.rest.users.getContextForUser({
-            githubUser,
+
+        const user = await octokit.request('GET /users/{username}', {
+            username: githubUser
           });
 
 
